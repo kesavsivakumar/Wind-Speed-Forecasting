@@ -97,13 +97,13 @@ def run_model(w_degree,w_speed,scaler_deg,scaler_speed,hours):
     
 	
     power=[]
-	windspeed_=[]
+    windspeed_=[]
     for i in range(len(w_speed[:,0,0])-48,len(w_speed[:,0,0])):
         x=scaler_speed.inverse_transform(w_speed[i:i+1,:,0])
         power.append(0.5*1.23*3.14*(45**2)*(x[0,0]**3)/1000)
-		windspeed_.append(x[0,0])
+	windspeed_.append(x[0,0])
     #return power
-	return windspeed_
+    return windspeed_
 
 @app.route('/',methods=['GET'])
 def index():
