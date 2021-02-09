@@ -109,8 +109,8 @@ def run_model(w_degree,w_speed,scaler_deg,scaler_speed,hours):
 def index():
     return "Welcome to our server !!"
 
-#if __name__=='__main__':
-    #app.run(port=9000,debug=False,threaded=True)
+if __name__=='__main__':
+	app.run(host='0.0.0.0',port=os.environ.get("PORT", 8000),debug=True)
 
 
 
