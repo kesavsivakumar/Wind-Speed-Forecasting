@@ -100,9 +100,8 @@ def run_model(w_degree,w_speed,scaler_deg,scaler_speed,hours):
     windspeed_=[]
     for i in range(len(w_speed[:,0,0])-48,len(w_speed[:,0,0])):
         x=scaler_speed.inverse_transform(w_speed[i:i+1,:,0])
-        power.append(0.5*1.23*3.14*(45**2)*(x[0,0]**3)/1000)
-	
-	windspeed_.append(x[0,0])
+        #power.append(0.5*1.23*3.14*(45**2)*(x[0,0]**3)/1000)
+        windspeed_.append(x[0,0])
     #return power
     return windspeed_
 
@@ -110,8 +109,8 @@ def run_model(w_degree,w_speed,scaler_deg,scaler_speed,hours):
 def index():
     return "Welcome to our server !!"
 
-if __name__=='__main__':
-    app.run(host='0.0.0.0',port=os.environ.get("PORT", 8000),debug=True,threaded=True)
+#if __name__=='__main__':
+    #app.run(port=9000,debug=False,threaded=True)
 
 
 
